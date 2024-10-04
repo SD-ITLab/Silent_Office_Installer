@@ -72,7 +72,7 @@ $MSPRO21 = {
     OfficeConf -ProductID "ProPlus2021Retail"
     Write-Host "  ║  " -ForegroundColor Yellow -NoNewline
     Write-Host "Installiere Software: " -ForegroundColor Red -NoNewline
-    Write-Host "Office 2021 Professional...   " -ForegroundColor Yellow -NoNewline
+    Write-Host "Office 2021 Professional Plus...   " -ForegroundColor Yellow -NoNewline
     Invoke-Command -ScriptBlock $installcheck
 }
 
@@ -97,7 +97,7 @@ $MSPRO24 = {
     OfficeConf -ProductID "ProPlus2024Retail"
     Write-Host "  ║  " -ForegroundColor Yellow -NoNewline
     Write-Host "Installiere Software: " -ForegroundColor Red -NoNewline
-    Write-Host "Office 2024 Professional...   " -ForegroundColor Yellow -NoNewline
+    Write-Host "Office 2024 Professional Plus...   " -ForegroundColor Yellow -NoNewline
     Invoke-Command -ScriptBlock $installcheck
 }
 
@@ -191,6 +191,7 @@ $End = {
 
 function menu {
 
+  Clear-Host
   Invoke-Command -ScriptBlock $Display
   Write-Host " ═════════════╦═══════════════════════════════════════════════════════════════════════╦═════════════" -ForegroundColor Yellow
   Write-Host "              ╠════════════════════════════" -NoNewline -ForegroundColor Yellow
