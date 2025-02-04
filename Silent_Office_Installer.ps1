@@ -52,7 +52,7 @@ $installcheck = {
 }
 
 $MSHS21 = {
-    OfficeConf -ProductID "ProPlus2021Retail"
+    OfficeConf -ProductID "HomeStudent2021Retail"
     Write-Host "  ║  " -ForegroundColor Yellow -NoNewline
     Write-Host "Installiere Software: " -ForegroundColor Red -NoNewline
     Write-Host "Office 2021 Home and Student...   " -ForegroundColor Yellow -NoNewline
@@ -60,12 +60,11 @@ $MSHS21 = {
 }
 
 $MSHB21 = {
-    OfficeConf -ProductID "ProPlus2021Retail"  
+    OfficeConf -ProductID "HomeBusiness2021Retail"  
     Write-Host "  ║  " -ForegroundColor Yellow -NoNewline
     Write-Host "Installiere Software: " -ForegroundColor Red -NoNewline
     Write-Host "Office 2021 Home and Business...    " -ForegroundColor Yellow -NoNewline
-    Invoke-Command -ScriptBlock $installcheck
-    
+    Invoke-Command -ScriptBlock $installcheck  
 }
 
 $MSPRO21 = {
@@ -89,9 +88,9 @@ $MSHB24 = {
     Write-Host "  ║  " -ForegroundColor Yellow -NoNewline
     Write-Host "Installiere Software: " -ForegroundColor Red -NoNewline
     Write-Host "Office Home and Business 2024...    " -ForegroundColor Yellow -NoNewline
-    Invoke-Command -ScriptBlock $installcheck
-    
+    Invoke-Command -ScriptBlock $installcheck   
 }
+
 
 $MSPRO24 = {
     OfficeConf -ProductID "ProPlus2024Retail"
@@ -99,23 +98,6 @@ $MSPRO24 = {
     Write-Host "Installiere Software: " -ForegroundColor Red -NoNewline
     Write-Host "Office Professional Plus 2024...   " -ForegroundColor Yellow -NoNewline
     Invoke-Command -ScriptBlock $installcheck
-}
-
-$MSHS24P = {
-    OfficeConf -ProductID "ProPlus2024Retail"
-    Write-Host "  ║  " -ForegroundColor Yellow -NoNewline
-    Write-Host "Installiere Software: " -ForegroundColor Red -NoNewline
-    Write-Host "Office 2024 Home and Student...   " -ForegroundColor Yellow -NoNewline
-    Invoke-Command -ScriptBlock $installcheck
-}
-
-$MSHB24P = {
-    OfficeConf -ProductID "ProPlus2024Retail"  
-    Write-Host "  ║  " -ForegroundColor Yellow -NoNewline
-    Write-Host "Installiere Software: " -ForegroundColor Red -NoNewline
-    Write-Host "Office 2024 Home and Business...    " -ForegroundColor Yellow -NoNewline
-    Invoke-Command -ScriptBlock $installcheck
-    
 }
 
 $MS365S = {
@@ -199,11 +181,11 @@ function menu {
   Write-Host "════════════════════════════╣              " -ForegroundColor Yellow
   Write-Host "              ║                                                                       ║" -ForegroundColor Yellow
   Write-Host "              ║" -ForegroundColor Yellow -NoNewLine
-  Write-Host "    [1]: Microsoft Office Home and Student 2021 (Pro Plus Image)       " -ForegroundColor Cyan -NoNewLine
+  Write-Host "    [1]: Microsoft Office Home and Student 2021                        " -ForegroundColor Cyan -NoNewLine
   Write-Host "║" -ForegroundColor Yellow
   Write-Host "              ║                                                                       ║" -ForegroundColor Yellow
   Write-Host "              ║" -ForegroundColor Yellow -NoNewLine
-  Write-Host "    [2]: Microsoft Office Home and Business 2021 (Pro Plus Image)      " -ForegroundColor Cyan -NoNewLine
+  Write-Host "    [2]: Microsoft Office Home and Business 2021                       " -ForegroundColor Cyan -NoNewLine
   Write-Host "║" -ForegroundColor Yellow
   Write-Host "              ║                                                                       ║" -ForegroundColor Yellow
   Write-Host "              ║" -ForegroundColor Yellow -NoNewLine
@@ -339,35 +321,7 @@ function menu {
             Invoke-Command -ScriptBlock $End
             exit
           }
-
- #       #H&SPro2024
- #         if ($actions -eq 7) {
- #             $host.ui.RawUI.WindowTitle = "Installing Office 2024 Home and Student"
- #             Clear-Host
- #             Invoke-Command -ScriptBlock $Display
- #             Write-Host "══╦═══════════════════════════════════════════════════════════════════════════════════════════════╦══" -ForegroundColor Yellow
- #             Write-Host "  ║                                                                                               ║" -ForegroundColor Yellow
- #             Invoke-Command -ScriptBlock $MSHS24P
- #             $Apps = @("Word", "Excel", "PowerPoint")
- #             Shortcut -Apps $Apps
- #             Invoke-Command -ScriptBlock $End
- #             exit
- #        } 
-
- #       #H&BPro2024
- #         if ($actions -eq 8) {
- #             $host.ui.RawUI.WindowTitle = "Installing Office 2024 Home and Business"
- #             Clear-Host
- #             Invoke-Command -ScriptBlock $Display
- #             Write-Host "══╦═══════════════════════════════════════════════════════════════════════════════════════════════╦══" -ForegroundColor Yellow
- #             Write-Host "  ║                                                                                               ║" -ForegroundColor Yellow
- #             Invoke-Command -ScriptBlock $MSHS24P
- #             $Apps = @("Word", "Excel", "PowerPoint", "Outlook (classic)")
- #             Shortcut -Apps $Apps
- #             Invoke-Command -ScriptBlock $End
- #             exit
- #         } 
-
+          
         #365Single
           if ($actions -eq 7) {
               $host.ui.RawUI.WindowTitle = "Installing Office 365 Single"
